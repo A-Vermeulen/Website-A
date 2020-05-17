@@ -101,6 +101,12 @@ header {
     display: block;
     padding: 10px 20px;
     background-color: revert;
+    transition: background-color, color, 2s;
+}
+
+.menu a:hover {
+    background-color: teal;
+    color: white;
 }
 
 
@@ -163,6 +169,7 @@ header {
 
 .contato a:hover {
     text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
 
 .contato .icons {
