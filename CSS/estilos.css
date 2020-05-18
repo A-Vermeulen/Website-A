@@ -82,6 +82,8 @@ header {
     width: 100vw;
     /* box-shadow: aqua 10px 10px 50px 0px; cor, deslocamento do eixo x, deslocamento do eixo y, qual nítido ou esfumaçando é a sombra, 
     escala da sombra, se for 0 é o mesmo tamanho da caixa. */
+    z-index: 1;
+    /* arruma os textos das figuras */
 }
 
 .menu li {
@@ -101,9 +103,10 @@ header {
     display: block;
     padding: 10px 20px;
     background-color: revert;
-    transition: background-color, color, 2s;
+    transition: background-color 1s, color, 1s;
 }
 
+.menu a:active,
 .menu a:hover {
     background-color: teal;
     color: white;
@@ -115,11 +118,30 @@ header {
 
 /* abaixo aproveitamos duas classes com os mesmos atributos e nao precisamos escrever duas vezes o código. bota uma classe, virgula e depois a outra com os atributos iguais. */
 
+.titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: 1s ease 2s animacaoTitulo forwards;
+}
+
+
+/* Ferramentas de Animação com o título acima*/
+
+@keyframes animacaoTitulo {
+    from {
+        transform: scale(0.2) translateY(50vh);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
 .site-subtitle,
 .site-title {
     color: whitesmoke;
     text-align: center;
-    list-style: height 2.5em;
 }
 
 .site-title {
@@ -167,6 +189,7 @@ header {
     font-size: 4em;
 }
 
+.contato a:active,
 .contato a:hover {
     text-decoration: none;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
@@ -203,6 +226,11 @@ header {
     object-fit: cover;
     object-position: left;
     border-radius: 10px;
+    transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+    transform: scale(1.2) rotate(-2deg);
 }
 
 
