@@ -157,8 +157,9 @@ header {
 }
 
 
-/*           ------- CLASSE IMAGEM - IMG-PORTFOLIO / PROJETOS / CONTATOS-------      */
+/*           ------- CLASSE SOBRE / PORTFOLIO / PROJETOS / CONTATOS / Imagens-------      */
 
+.sobre h2,
 .contato h2,
 .portfolio h2 {
     font-family: 'Roboto', sans-serif;
@@ -167,10 +168,26 @@ header {
     font-size: 2em;
 }
 
+@media(min-width: 1200px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+    }
+}
+
+.sobre,
 .contato,
 .portfolio {
     padding: 2em;
     min-height: 100vh;
+}
+
+.sobre p {
+    color: whitesmoke;
+    text-indent: 1.4em;
+    margin-bottom: 1.4em;
+    font-size: 1em;
 }
 
 .portfolio .grid {
