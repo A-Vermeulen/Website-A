@@ -159,6 +159,9 @@ header {
 
 /*           ------- CLASSE SOBRE / PORTFOLIO / PROJETOS / CONTATOS / Imagens-------      */
 
+
+/* Ver tb https://www.w3schools.com/howto/howto_css_profile_card.asp */
+
 .sobre h2,
 .contato h2,
 .portfolio h2 {
@@ -189,6 +192,23 @@ header {
     margin-bottom: 1.4em;
     font-size: 1em;
 }
+
+.sobre .avatar {
+    float: right;
+    margin-left: 2em;
+}
+
+
+/* faz o texto ficar ao redor da imagem e deixa a imagem no lado esquerdo*/
+
+.sobre .avatar img {
+    clip-path: circle(45% at 50% 50%);
+    height: 124px;
+    width: 171px;
+}
+
+
+/* border-radius: 60%; faz a imagem ficar arrendondada tb*/
 
 .portfolio .grid {
     display: grid;
@@ -238,16 +258,48 @@ header {
 }
 
 .img-portfolio {
-    height: 124px;
-    width: 171px;
+    height: 160px;
+    width: 100%;
     object-fit: cover;
-    object-position: left;
+    object-position: left bottom;
     border-radius: 10px;
     transition: transform 500ms;
 }
 
 .img-portfolio:hover {
     transform: scale(1.2) rotate(-2deg);
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.flipcard {
+    perspective: 500px;
+}
+
+.flipcard:hover .card {
+    transform: rotateY(180deg);
+    /* Rotacionar no eixo Y */
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+    /*esconde a face de tras*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* tira das formatacoes antigas*/
+}
+
+.card-back {
+    height: 161px;
+    width: 100%;
+    transform: rotateY(180deg);
+    /* Rotacionar no eixo Y */
 }
 
 
